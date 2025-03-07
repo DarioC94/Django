@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="my-4">Lista delle Categorie</h1>
+    <div class="row">
+        {% for categoria in categorie %}
+        <div class="col-md-4 mb-4">
+            <div class="card w-100 h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ categoria.nome }}</h5>
+                    <img src="{{ categoria.immagine }}" class="card-img-top w-50" alt="{{ categoria.nome }}">
+                    <p class="card-text mb-5">{{ categoria.descrizione|truncatewords:20 }}</p>
+                    <a href="{% url 'categoria_detail' categoria.slug %}" class="btn btn-outline-primary">Vedi Prodotti</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,210 @@
+/* Stile per l'intestazione */
+body {
+    background-color: #181818;
+}
+.header {
+    background-image: url('https://img.pikbest.com/wp/202408/gaming-pc-is-sitting-on-a-dark-screen_9594551.jpg!w700wp'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Altezza dell'intestazione pari all'altezza del viewport */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Stile per il titolo nell'intestazione */
+.header h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: orangered;
+}
+
+/* Stile per la descrizione nell'intestazione */
+.header p {
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+div p {
+    color: aliceblue;
+}
+
+.navbar-nav .nav-link {
+    color: white;  /* Colore di default */
+    transition: color 0.5s ease; /* Transizione del colore in 0.5 secondi */
+}
+
+/* Effetto hover: cambia il colore del link quando si passa sopra */
+.navbar-nav .nav-link:hover {
+    color: orangered; /* Colore arancione al passaggio del mouse */
+}
+
+div h1 {
+    color: orangered;
+}
+/* Stile per le card */
+.card {
+    border: 1px solid #000000;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* La card si adatta all'altezza della colonna */
+    background-color: #b3b3b3;
+}
+
+/* Stile per l'immagine */
+.card img {
+    height: 180px; /* Altezza fissa per l'immagine */
+    object-fit: cover;
+}
+
+/* Layout del contenuto della card */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Occupa lo spazio disponibile */
+    justify-content: space-between; /* Spinge il pulsante in fondo */
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 20px;
+    color: #070707;
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: #000000;
+    color: orangered;
+}
+
+
+/* Stili per l'overlay e il modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-container {
+    background: white;
+    padding: 20px;
+    max-width: 500px;
+    width: 90%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow-y: auto;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+/*Inizio modifica icona*/
+.fas {
+    color: black; /* Cambia il colore dell'icona in nero */
+    padding-top: 30px; 
+}
+
+.mb-3.position-relative {
+    position: relative;
+}
+
+.mb-3 .form-control {
+    padding-right: 40px; 
+}
+
+.fas.fa-eye {
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    position: absolute; /* Assicura che l'icona sia assolutamente posizionata rispetto al suo contenitore */
+}
+/*Fine modifica icona*/
+
+/* Stile per i messaggi di errore */
+.errore {
+    color: red;
+    font-size: 0.9em;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Stile per i campi con errore */
+.input-errore {
+    border-color: red;
+}
+
+svg {
+color: orangered;
+}
+
+.custom-border {
+    border: 5px solid orangered;
+    border-radius: 20px;  
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#blog h3 {
+    color: orangered;
+    font-size: 2rem;
+}
+
+#blog p {
+    color: aliceblue;
+    font-size: 1.2rem;
+}
+
+#blog ul {
+    list-style-type: square;
+}
+
+#blog li {
+    color: aliceblue;
+    font-size: 1.1rem;
+}
+
+#blog h4 {
+    color: rgb(129, 106, 6);
+    font-size: 1.5rem;
+}
+
+.articoli_blog{
+    color: orangered;
+    font-size: 2rem;
+
+}
+
+.articoli_blog:hover{
+    color: rgb(255, 166, 0);
+    font-size: 2rem;
+    
+}

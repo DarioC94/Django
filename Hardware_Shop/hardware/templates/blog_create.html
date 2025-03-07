@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Nuovo Articolo</h1>
+    <form method="post" class="mt-3 text-warning">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.titolo.label_tag }}
+            {{ form.titolo }}
+        </div>
+        <div class="mb-3">
+            {{ form.contenuto.label_tag }}
+            {{ form.contenuto }}
+        </div>
+        <div class="mb-3">
+            {{ form.immagine.label_tag }}
+            {{ form.immagine }}
+        </div>
+        <div class="mb-3">
+            {{ form.slug.label_tag }}
+            {{ form.slug }}
+        </div>
+        <button type="submit" class="btn btn-success">Pubblica</button>
+    </form>
+    <a href="{% url 'blog-list' %}" class="btn btn-secondary mt-3">Torna al Blog</a>
+</div>
+{% endblock %}

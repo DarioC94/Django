@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Blog</h1>
+    <div class="list-group m-5 text-center">
+        {% for articolo in articoli %}
+            <a href="{% url 'blog-detail' articolo.slug %}" class="list-group-item list-group-item-action bg-dark articoli_blog">
+                <h5>{{ articolo.titolo }}</h5>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

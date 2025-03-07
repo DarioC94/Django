@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- Inizio intestazione con immagine di background -->
+<header class="header">
+    
+    <h1 class="display-4 text-center">Benvenuti in Hardware Store</h1>
+    <div class="container text-center"><p class="lead text-center justify-content-center" style="font-weight: bold;">
+        Qui troverai i migliori componenti hardware per costruire il tuo PC da gioco personalizzato!
+    </p>
+</div>
+    
+</header>
+
+<div class="container text-center">
+    <h1 class="my-4">Visita il nostro catalogo</h1>
+    <div class="row">
+        {% for categoria in categorie %}
+        <div class="col-md-4 mb-4 d-flex">
+            <div class="card h-100 w-100">
+                <img src="{{ categoria.immagine }}" class="card-img-top h-50 w-50" alt="{{ categoria.nome }}">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ categoria.nome }}</h5>
+                    <p class="card-text">{{ categoria.descrizione|truncatewords:15 }}</p>
+                    <a href="{% url 'categoria_detail' categoria.slug %}" class="btn btn-primary mt-auto">Vedi Prodotti</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Form di Iscrizione con Validazione e Icone di Visibilità Password -->
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-3 mb-2">
+            <h1>Unisciti a noi!</h1>
+            <h3 style="color: orange;">Iscriviti al nostro Hardware Store per restare aggiornato!</h3>
+        </div>
+        <div class="col-md-5">
+            <div class="card bg-dark text-white border-light">
+                <div class="card-body">
+                    <form id="formRegistrazione" novalidate autocomplete="off">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="name" placeholder="Inserisci il tuo nome" required autocomplete="off">
+                            <span id="erroreName" class="errore"></span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">Cognome</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Inserisci il tuo cognome" required autocomplete="off">
+                            <span id="erroreLastName" class="errore"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Indirizzo Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Inserisci la tua email" required autocomplete="off">
+                            <span id="erroreEmail" class="errore"></span>
+                        </div>
+
+                        <div class="mb-3 position-relative">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Crea una password" required autocomplete="off">
+                            <i id="togglePassword" class="fas fa-eye position-absolute" style="top: 50%; right: 15px; transform: translateY(-50%); cursor: pointer; color: black;"></i>
+                            <span id="errorePassword" class="errore"></span>
+                        </div>
+                        
+                        <div class="mb-3 position-relative">
+                            <label for="confirmPassword" class="form-label">Conferma Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Conferma la password" required autocomplete="off">
+                            <i id="toggleConfirmPassword" class="fas fa-eye position-absolute" style="top: 50%; right: 15px; transform: translateY(-50%); cursor: pointer; color: black;"></i>
+                            <span id="erroreConfirmPassword" class="errore"></span>
+                        </div>
+
+                        <button type="button" class="btn btn-danger w-100" onclick="validazione()">Iscriviti</button>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <p>Hai già un account? <a href="#" class="text-danger">Accedi</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/formIscrizione.js' %}"></script>
+{% endblock %}

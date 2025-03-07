@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>{{ articolo.titolo }}</h1>
+    <p>Pubblicato il {{ articolo.data_pubblicazione|date:"d M Y" }} da {{ articolo.autore }}</p>
+    {% if articolo.immagine %}
+        <img src="{{ articolo.immagine }}" alt="{{ articolo.titolo }}" class="img-fluid my-3">
+    {% endif %}
+    <div id="blog">
+        {{ articolo.contenuto|safe }}
+    </div>
+    <a href="{% url 'blog-list' %}" class="btn btn-secondary mt-3">Torna al Blog</a>
+</div>
+{% endblock %}
